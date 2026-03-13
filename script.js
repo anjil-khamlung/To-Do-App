@@ -2,7 +2,7 @@ const inputBox = document.getElementById("input-box");
 const addBtn = document.getElementById("add-btn");
 const list = document.getElementById("list");
 
-addBtn.addEventListener("click", addTask);//listens for click
+addBtn.addEventListener("click", addTask);
 
 function addTask() {
   const taskText = inputBox.value.trim();
@@ -43,13 +43,12 @@ function addTask() {
 
 //Handle Click (Complete or Delete)
 list.addEventListener("click", function (e) {
-  // Toggle completed when checkbox is clicked
   if (e.target.classList.contains("task-checkbox")) {
     const li = e.target.parentElement;
     li.classList.toggle("completed");
     saveData();
   }
-  // Delete task
+  
   else if (e.target.className === "delete-btn") {
     e.target.parentElement.remove();
     saveData();
